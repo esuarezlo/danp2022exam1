@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+        <KeyFrameSet>
+            <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@+id/button1"
+                motion:pathMotionArc="none"
+                motion:percentX="0.5"
+                motion:percentY="0.31" />
+            <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@+id/button2"
+                motion:pathMotionArc="startHorizontal"
+                motion:percentX="0.5"
+                motion:percentY="0.69" />
+            <KeyPosition
+                motion:framePosition="51"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@+id/button1"
+                motion:pathMotionArc="none"
+                motion:percentX="0.50"
+                motion:percentY="0.49" />
+            <KeyCycle
+                android:scaleX="0.2"
+                motion:framePosition="10"
+                motion:motionTarget="@+id/button2"
+                motion:waveOffset="1"
+                motion:wavePeriod="1" >
+                <CustomAttribute
+                    motion:attributeName="backgroundColor"
+                    motion:customColorValue="#AA00FF" />
+            </KeyCycle>
+<!--            <KeyCycle
+                motion:framePosition="5"
+                motion:motionTarget="@+id/button1"
+                motion:waveOffset="1"
+                motion:wavePeriod="1">
+             <CustomAttribute
+                    motion:attributeName="backgroundColor"
+                    motion:customColorValue="#220011" />
+            </KeyCycle>-->
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/button1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:pathMotionArc="startVertical" >
+            <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="#FF6D00" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/button2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:pathMotionArc="startVertical" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/button1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/button2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+</MotionScene>
